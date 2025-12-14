@@ -13,6 +13,8 @@ Python 3.12
 Для получения токена отройте страницу консоли RuStore, 
 нажмите на клавиатуре F12, См. картинку cookie_f12.png
 """
+# Конфигурация
+start_date = datetime.date.fromisoformat('2023-06-01')
 
 
 @dataclass
@@ -34,7 +36,6 @@ class Purchase:
         return f"{self.invoice_date};{self.invoice_id};{self.invoice_status};{self.purchase_id};{self.amount_current}\n"
 
 
-# Конфигурация
 HEADERS: Dict[str, str] = {}
 
 try:
@@ -204,5 +205,4 @@ def collect_data(start_date: datetime.date):
 
 
 if __name__ == "__main__":
-    start_date = datetime.date.fromisoformat('2023-06-01')
     collect_data(start_date)
