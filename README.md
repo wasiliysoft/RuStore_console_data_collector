@@ -14,7 +14,7 @@
 
 ### 1. Предварительные требования
 
-- Python 3.12 или новее [скачать] (https://www.python.org/downloads/)
+- Python 3.12 или новее [скачать](https://www.python.org/downloads/)
 - Аккаунт разработчика RuStore
 - Power BI Desktop (для визуализации) [скачать](https://www.microsoft.com/ru-RU/download/details.aspx?id=58494)
 
