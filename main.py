@@ -31,9 +31,10 @@ class Purchase:
     invoice_date: str
     invoice_status: str
     purchase_id: str
+    description: str
 
     def to_tsv_row(self):
-        return f"{self.invoice_date};{self.invoice_id};{self.invoice_status};{self.purchase_id};{self.amount_current}\n"
+        return f"{self.invoice_date};{self.invoice_id};{self.invoice_status};{self.purchase_id};{self.amount_current};{self.description}\n"
 
 
 HEADERS: Dict[str, str] = {}
@@ -74,6 +75,7 @@ def map_purchase(raw_purchase: Dict) -> Purchase:
         invoice_date=raw_purchase['invoice_date'],
         invoice_status=raw_purchase['invoice_status'],
         purchase_id=raw_purchase['purchase_id'],
+        description=raw_purchase['description'],
     )
 
 
@@ -164,7 +166,7 @@ def save_revenue_report(
     with open(filename, 'w') as file:
         for date in generate_date_range(start_date):
             revenue = int(daily_revenue.get(date, 0))
-            file.write(f"{date}\t{revenue}\n")
+            file.write(f"{date}\t{revenue}\t{app_info.appName}\n")
 
 
 def save_purchases_report(
