@@ -31,7 +31,7 @@ pip install -r requirements.txt
 
 ### 3. Получение токена авторизации
 
-1. Откройте [консоль разработчика RuStore](https://console.rustore.ru)
+1. Откройте <a href="https://console.rustore.ru" target="_blank">консоль разработчика RuStore</a>
 2. Нажмите `F12` для открытия инструментов разработчика
 3. Перейдите во вкладку **Application** → **Storage** → **Cookies**
 4. Найдите куку `vk_dev_console_access_token` (как показано на картинке `cookie_f12.png`)
